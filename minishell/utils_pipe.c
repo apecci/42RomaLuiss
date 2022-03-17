@@ -22,7 +22,7 @@ static int	init_pipe(int i, int *fd, int size)
 	return (0);
 }
 
-int	init_pipes(t_list ** lsthead)
+int	init_pipes(t_list **lsthead)
 {
 	int		size;
 	int		i;

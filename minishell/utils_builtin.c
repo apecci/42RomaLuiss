@@ -82,7 +82,7 @@ int	builtin_exe(t_core *data, t_list **head, int len, t_list **lsthead)
 	else
 	{
 		builtin_pipe(data);
-		err = builtin_run(data, head, len ,lsthead);
+		err = builtin_run(data, head, len, lsthead);
 		pipe_destroyer(data);
 	}
 	close_pipe(data);

@@ -17,7 +17,7 @@ static int	inhandler(t_list **head, t_core *cnt)
 	int	fd;
 
 	fd = open(cnt->inname, O_RDONLY, 0644);
-	if (fd = -1)
+	if (fd == -1)
 	{
 		sandro_error_print(head, cnt->inname, -1);
 		return (1);
@@ -76,7 +76,7 @@ int	ft_close_redirect(t_core *cnt)
 {
 	int	err;
 
-	err =0;
+	err = 0;
 	if (cnt->fdin > 0)
 	{
 		err = dup2(cnt->fdin, STDIN_FILENO);
