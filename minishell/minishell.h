@@ -146,13 +146,13 @@ void	in_sig(void);
 void	block_sig_cmd(void);
 
 //utils_arguments.c
-int		arg_reader(t_list **lsthead);
+int		arg_reader(t_list **lsthead, int i, int tok);
 
 //utils_exe.c
 int		ft_execute(t_list **head, t_list **lsthead);
 
 //utils_pipe.c
-int		init_pipes(t_list ** lsthead);
+int		init_pipes(t_list **lsthead);
 int		check_builtin(t_split *data, int len);
 void	close_pipe(t_core *data);
 void	close_pipes(t_core *data);
@@ -172,6 +172,5 @@ void	stop_fd(int sig);
 int		builtin_exe(t_core *data, t_list **head, int len, t_list **lsthead);
 
 //utils_exit.c
-
 
 #endif

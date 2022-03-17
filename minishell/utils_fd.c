@@ -24,7 +24,7 @@ static int	expand(char *str)
 	while (*str)
 	{
 		f = 0;
-		while ( *str && *str == '$')
+		while (*str && *str == '$')
 		{
 			f = 1;
 			str++;
@@ -42,14 +42,14 @@ static void	get_write_in(t_list **head, t_core *cnt, int tmp)
 	char	*in;
 
 	signal(SIGINT, stop_fd);
-	while(head)
+	while (head)
 	{
 		in = readline("> ");
 		if (!in)
 			exit_fd(tmp, cnt->inname);
 		if (ft_strncmp(in, cnt->inname, ft_strlen(in) + 1))
 		{
-			while(expand(in))
+			while (expand(in))
 				varexp(&in, 0, head);
 			ft_putendl_fd(in, tmp);
 		}

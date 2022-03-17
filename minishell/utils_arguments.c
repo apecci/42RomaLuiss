@@ -30,8 +30,8 @@ static void	check_error(t_list **head)
 
 static void	sort_back(char **m, int tok)
 {
-	int i;
-	int x;
+	int	i;
+	int	x;
 
 	i = 0;
 	while (i < tok)
@@ -65,14 +65,11 @@ static int	get_tok(char **str)
 	return (i);
 }
 
-int	arg_reader(t_list **lsthead)
+int	arg_reader(t_list **lsthead, int i, int tok)
 {
 	t_list	*lst;
 	t_core	*cnt;
-	int		i;
-	int		tok;
 
-	tok = 0;
 	lst = *lsthead;
 	while (lst)
 	{
