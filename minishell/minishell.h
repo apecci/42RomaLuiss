@@ -153,7 +153,7 @@ int		ft_execute(t_list **head, t_list **lsthead);
 
 //utils_pipe.c
 int		init_pipes(t_list **lsthead);
-int		check_builtin(t_split *data, int len);
+int		check_builtin(t_core *data, int len);
 void	close_pipe(t_core *data);
 void	close_pipes(t_core *data);
 
