@@ -33,7 +33,7 @@ static	void	init_sandro_shell(t_list **head,
 		}
 		add_history(in);
 		in_scan(in, head, lsthead);
-		if (!arg_reader(lsthead))
+		if (!arg_reader(lsthead, 0, 0))
 			ft_execute(head, lsthead);
 		else
 			sandro_cerror(head, "Syntax ", "Error", 2);
