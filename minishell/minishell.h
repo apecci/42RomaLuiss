@@ -102,6 +102,9 @@ void	sandro_cerror(t_list **head, char *s1, char *s2, int n);
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
 
+//utils7.c
+char	**ft_split(char const *s, char c);
+
 //utils_env.c
 int		init_env(t_list **head, char **envp);
 int		init_env2(t_list **head, char *name, char *value);
@@ -172,5 +175,8 @@ void	stop_fd(int sig);
 int		builtin_exe(t_core *data, t_list **head, int len, t_list **lsthead);
 
 //utils_exit.c
+
+//utils_file.c
+char	*file_exists(char *name, char *path, int i);
 
 #endif

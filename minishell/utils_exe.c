@@ -12,6 +12,35 @@
 
 #include "minishell.h"
 
+static char	is_path(t_list **head)
+{
+	char	*path;
+
+	path = envget(*head, "PATH");
+	if (path)
+		return (path);
+	else
+		return ("./");
+}
+
+static void	prog_runner(t_list **head, t_core *data)
+{
+	char	*name;
+	int		status;
+	pid_t	pid;
+
+	pid = 0;
+	status = 0;
+	name = NULL;
+	name = file_exists(data->tkn[0], is_path(head), 0);
+	if (name)
+	{
+		pid = fork();
+		if (!pid)
+			
+	}
+}
+
 static int	ft_builtin(t_core *data, t_list **head, t_list **lsthead)
 {
 	int	len;
@@ -22,7 +51,8 @@ static int	ft_builtin(t_core *data, t_list **head, t_list **lsthead)
 	if (bui)
 		return (builtin_exe(data, head, len, lsthead));
 	else if (!bui && len)
-		
+		prog_runner(head, data);
+	return (0);
 }
 
 int	ft_execute(t_list **head, t_list **lsthead)

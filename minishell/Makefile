@@ -1,8 +1,8 @@
 NAME			=	minishell
 
-SRCS			=	minishell.c utils.c utils1.c utils2.c utils3.c utils4.c utils5.c utils6.c utils_env.c utils_env2.c utils_env3.c utils_env4.c \
+SRCS			=	minishell.c utils.c utils1.c utils2.c utils3.c utils4.c utils5.c utils6.c utils7.c utils_env.c utils_env2.c utils_env3.c utils_env4.c \
 					utils_sandro.c utils_sandro1.c utils_sig.c utils_token.c utils_token1.c utils_arguments.c utils_token2.c utils_token3.c \
-					utils_exe.c utils_pipe.c utils_red.c utils_fd.c utils_fd1.c utils_builtin.c utils_exit.c
+					utils_exe.c utils_pipe.c utils_red.c utils_fd.c utils_fd1.c utils_builtin.c utils_exit.c utils_file.c
 					
 OBJS			=	$(SRCS:.c=.o)
 
@@ -19,12 +19,12 @@ RM				=	rm -rf
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			@echo "\033[0;33mCompilamiento..."
+			@echo "\033[0;33mCompilamiento.TRENGIIII.."
 			${CC} ${CFLAGS} ${READLINE_LIB} ${READLINE_INC} -o ${NAME} ${OBJS}
 			@echo "\033[0m"
 
 clean:
-			@echo "\033[0;31mPulimiento..."
+			@echo "\033[0;31mPulimiento.FIG BO.."
 			$(RM) $(OBJS)
 			@echo "\033[0m"
 
