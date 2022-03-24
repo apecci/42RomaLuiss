@@ -12,6 +12,33 @@
 
 #include "minishell.h"
 
+char	**get_argv(t_core *data, char *name)
+{
+	int		i;
+	int		max;
+	char	**argv;
+
+	max = 0;
+	while (data->tkn[max] != NULL)
+		max++;
+	max++;
+	argv = ft_calloc(max + 1, sizeof(char *));
+	if (!argv)
+		return (NULL);
+	argv[0] = ft_strdup(name);
+	i = 1;
+	while (data->tkn[i] != NULL)
+	{
+		if (ft_strlen(data->tkn[i]))
+			argv[i] = ft_strdup(data->tkn[i]);
+		else
+			argv[i] = ft_calloc(1, sizeof(char));
+		i++;
+	}
+	argv[i] = NULL;
+	return (argv);
+}
+
 static char	is_path(t_list **head)
 {
 	char	*path;
@@ -37,8 +64,17 @@ static void	prog_runner(t_list **head, t_core *data)
 	{
 		pid = fork();
 		if (!pid)
-			
+			pipe_exe(name, head, data);
 	}
+	else
+		sandro_cerror(head, data->tkn[0], ": command not found!", 127);
+	waitpid(pid, &status, 0);
+	if (status && name)
+		sandro_error_print(head, NULL, errno);
+	else if (name)
+		sandro_error_print(head, NULL, 0);
+	close_pipe(data);
+	free(name);
 }
 
 static int	ft_builtin(t_core *data, t_list **head, t_list **lsthead)

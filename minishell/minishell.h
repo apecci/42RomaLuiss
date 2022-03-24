@@ -119,6 +119,10 @@ void	varexp(char **m, int i, t_list **head);
 
 //utils_env4.c
 char	*envget(t_list *head, char *str);
+char	env_export(t_list **head);
+int		get_env_n(t_list **head);
+int		builtin_env(t_list **lst);
+
 
 //utils_sandro.c
 char	*get_pro(t_list *head);
@@ -153,12 +157,17 @@ int		arg_reader(t_list **lsthead, int i, int tok);
 
 //utils_exe.c
 int		ft_execute(t_list **head, t_list **lsthead);
+char	**get_argv(t_core *data, char *name);
 
 //utils_pipe.c
 int		init_pipes(t_list **lsthead);
 int		check_builtin(t_core *data, int len);
 void	close_pipe(t_core *data);
 void	close_pipes(t_core *data);
+
+//utils_pipe1.c
+void    pipe_exe(char *name, t_list **head, t_core *data);
+void    exit_cmd(t_list **head, t_list **ctt, t_core *data);
 
 //utils_red.c
 int		ft_redirect(t_list **head, t_core *cnt);
@@ -175,8 +184,13 @@ void	stop_fd(int sig);
 int		builtin_exe(t_core *data, t_list **head, int len, t_list **lsthead);
 
 //utils_exit.c
+void    sandro_exit(t_list **env, t_list **ctt);
 
 //utils_file.c
 char	*file_exists(char *name, char *path, int i);
+
+//utils_cd.c
+int 	builtin_cd(t_list **head, t_core *data);
+
 
 #endif
