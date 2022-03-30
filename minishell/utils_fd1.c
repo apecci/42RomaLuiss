@@ -23,5 +23,5 @@ void	stop_fd(int sig)
 {
 	(void)sig;
 	write(1, "\n", 1);
-	eit(errno);
+	exit(errno);
 }

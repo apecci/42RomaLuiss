@@ -71,3 +71,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ft_strlcat(ptr, s2, blen + alen + 1);
 	return (ptr);
 }
+
+int	ft_isalpha(int c)
+{
+	if (((c >= 65) && (c <= 90)) || ((c >= 97) && (c <= 122)))
+		return (1);
+	else
+		return (0);
+}

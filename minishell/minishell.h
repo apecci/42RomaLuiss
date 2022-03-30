@@ -101,6 +101,7 @@ void	sandro_cerror(t_list **head, char *s1, char *s2, int n);
 //utils6.c
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_isalpha(int c);
 
 //utils7.c
 char	**ft_split(char const *s, char c);
@@ -108,6 +109,7 @@ char	**ft_split(char const *s, char c);
 //utils_env.c
 int		init_env(t_list **head, char **envp);
 int		init_env2(t_list **head, char *name, char *value);
+char	**split(char *str);
 
 //utils_env2.c
 int		ft_atoi(const char *nptr);
@@ -119,10 +121,12 @@ void	varexp(char **m, int i, t_list **head);
 
 //utils_env4.c
 char	*envget(t_list *head, char *str);
-char	env_export(t_list **head);
+char	**env_export(t_list **head);
 int		get_env_n(t_list **head);
 int		builtin_env(t_list **lst);
 
+//utils_env5.c
+t_env   **sort_env(t_list **head);
 
 //utils_sandro.c
 char	*get_pro(t_list *head);
@@ -192,5 +196,18 @@ char	*file_exists(char *name, char *path, int i);
 //utils_cd.c
 int 	builtin_cd(t_list **head, t_core *data);
 
+//utils_env.c
+void    builtin_pwd(t_list **head);
+
+//utils_echo.c
+void    builtin_echo(t_list **head, t_core *data);
+
+//utils_export.c
+void    builtin_export(t_list **head, t_core *data);
+
+//utils_unset.c
+
+void    builtin_unset(t_list **head, t_core *data);
+void    delete_entry(void *lst);
 
 #endif

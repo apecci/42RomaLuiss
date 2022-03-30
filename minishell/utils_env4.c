@@ -43,7 +43,7 @@ char	*envget(t_list *head, char *str)
 	return (NULL);
 }
 
-char	env_export(t_list **head)
+char	**env_export(t_list **head)
 {
 	t_env	*cnt;
 	t_list	*lst;

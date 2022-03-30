@@ -39,7 +39,7 @@ char	**get_argv(t_core *data, char *name)
 	return (argv);
 }
 
-static char	is_path(t_list **head)
+static char	*is_path(t_list **head)
 {
 	char	*path;
 

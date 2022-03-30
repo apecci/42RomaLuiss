@@ -52,7 +52,8 @@ static int	get_eq_len(char *str)
 	return (i);
 }
 
-static char	**split(char *str)
+
+char	**split(char *str)
 {
 	char	**new;
 	int		len;
