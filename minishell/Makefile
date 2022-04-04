@@ -25,23 +25,19 @@ OBJS			=	$(SRCS:.c=.o)
 
 CC				=	gcc
 
-CFLAGS			=	-Wall -Wextra -Werror
+CFLAGS			=	-Wall -Wextra -Werror -pthread
 
-#READLINE_LIB	=	-lreadline -L /goinfre/apecci/.brew/opt/readline/lib
+READLINE_LIB	=	-lreadline -L/goinfre/apecci/.brew/opt/readline/lib
 
-#READLINE_INC	=	-I /goinfre/apecci/.brew/opt/readline/include
-
-READLINE_LIB	=	-lreadline -L/usr/local/opt/readline/lib
-
-READLINE_INC	=	-I/usr/local/opt/readline/include
+READLINE_INC	=	-I/goinfre/apecci/.brew/opt/readline/include
 
 RM				=	rm -rf
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	
 			@echo "\033[0;33mCompilamiento..."
-			${CC} ${CFLAGS} ${READLINE_LIB} ${READLINE_INC} -o ${NAME} ${OBJS}
+			${CC} ${CFLAGS} ${SRCS} ${READLINE_LIB} ${READLINE_INC} -o ${NAME} 
 			@echo "\033[0m"
 
 clean:

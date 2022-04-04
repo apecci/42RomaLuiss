@@ -6,7 +6,7 @@
 /*   By: apecci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:38:40 by apecci            #+#    #+#             */
-/*   Updated: 2022/03/14 16:38:41 by apecci           ###   ########.fr       */
+/*   Updated: 2022/04/04 15:45:31 by apecci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static int	get_eq_len(char *str)
 	}
 	return (i);
 }
-
 
 char	**split(char *str)
 {
@@ -103,9 +102,9 @@ int	init_env(t_list **head, char **envp)
 
 	err = 0;
 	i = 0;
-	while (!err && envp && envp[1])
+	while (!err && envp && envp[i])
 	{
-		err = lst_add(head, envp[1]);
+		err = lst_add(head, envp[i]);
 		i++;
 	}
 	if (!envp || !i)

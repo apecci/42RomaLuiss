@@ -69,8 +69,8 @@ char	*get_pro(t_list *head)
 	dir = envget(head, "PWD");
 	pro = calloc(ft_strlen(name) + ft_strlen(dir) + 16, sizeof(char));
 	ft_strlcat(pro, name, ft_strlen(name) + 1);
-	ft_strlcat(pro, ":", ft_strlen(pro) + 9);
+	ft_strlcat(pro, ":\033[0;33m", ft_strlen(pro) + 9);
 	ft_strlcat(pro, dir, ft_strlen(pro) + ft_strlen(dir) + 1);
-	ft_strlcat(pro, " ", ft_strlen(pro) + 8);
+	ft_strlcat(pro, "\x1b[0m$ ", ft_strlen(pro) + 8);
 	return (pro);
 }

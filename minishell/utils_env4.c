@@ -6,7 +6,7 @@
 /*   By: apecci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:23:36 by apecci            #+#    #+#             */
-/*   Updated: 2022/03/15 17:23:37 by apecci           ###   ########.fr       */
+/*   Updated: 2022/04/04 16:09:12 by apecci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	**env_export(t_list **head)
 	int		i;
 
 	i = 0;
-	arr = ft_calloc(get_env_n(head) + 1,sizeof(char *));
+	arr = ft_calloc(get_env_n(head) + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
 	lst = *head;
