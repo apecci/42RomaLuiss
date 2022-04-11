@@ -57,9 +57,9 @@ char	**split(char *str)
 	char	**new;
 	int		len;
 
-	len = get_eq_len(str);
-	if (!str || !len)
+	if (!str || !*str)
 		return (NULL);
+	len = get_eq_len(str);
 	new = ft_calloc(2, sizeof(char *));
 	if (!new)
 		return (NULL);

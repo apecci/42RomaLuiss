@@ -15,7 +15,7 @@
 static int	settokin(t_core *cnt, int i, int flg)
 {
 	if (!cnt->tkn[i + 1])
-		return (0);
+		return (-666);
 	if (flg)
 		cnt->appin = 1;
 	else
@@ -68,7 +68,7 @@ int	checktokout(t_core *cnt, int i)
 {
 	if (!cnt->tkn[i])
 		return (i);
-	if (!ft_strncmp(cnt->tkn[i], ">", 3))
+	if (!ft_strncmp(cnt->tkn[i], ">>", 3))
 	{
 		i = settokout(cnt, i, 1);
 		return (i + 1);

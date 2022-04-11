@@ -22,7 +22,7 @@ static int	inhandler(t_list **head, t_core *cnt)
 		sandro_error_print(head, cnt->inname, -1);
 		return (1);
 	}
-	cnt->fdin = dup(STDERR_FILENO);
+	cnt->fdin = dup(STDIN_FILENO);
 	if (dup2(fd, STDIN_FILENO) == -1)
 		sandro_error_print(head, "dup2", -1);
 	if (cnt->fdin == -1)
@@ -41,13 +41,13 @@ static int	outhandler(t_list **head, t_core *cnt)
 	if (cnt->redout == 1)
 		fd = open(cnt->outname, O_WRONLY | O_TRUNC | O_CREAT, 0644);
 	else if (cnt->appout == 1)
-		fd = open(cnt->outname, O_WRONLY | O_TRUNC | O_CREAT, 0644);
+		fd = open(cnt->outname, O_WRONLY | O_CREAT | O_APPEND, 0644);
 	if (fd == -1)
 	{
 		sandro_error_print(head, cnt->outname, -1);
 		return (1);
 	}
-	cnt->fdout = dup(STDERR_FILENO);
+	cnt->fdout = dup(STDOUT_FILENO);
 	if (dup2(fd, STDOUT_FILENO) == -1)
 		sandro_error_print(head, "dup2", -1);
 	if (cnt->fdout == -1)

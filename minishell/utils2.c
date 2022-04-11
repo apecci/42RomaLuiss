@@ -16,7 +16,7 @@ int	is_new_lst(t_list **head, char *name, char *value)
 {
 	t_env	*cntn;
 
-	cntn = malloc(sizeof(char));
+	cntn = malloc(sizeof(t_env));
 	if (!head || !name || !value || !cntn)
 		return (1);
 	cntn->name = ft_calloc(ft_strlen(name) + 1, sizeof(char));
