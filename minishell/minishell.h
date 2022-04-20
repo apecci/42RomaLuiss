@@ -22,7 +22,7 @@
 # include <pthread.h>
 # include <signal.h>
 # include <dirent.h>
-# include <string.h>
+# include <string.h> 
 # include <termios.h>
 # include <sys/types.h>
 # include <sys/time.h>

@@ -14,7 +14,7 @@
 
 static int	create_tmp_fd(void)
 {
-	return (open("tmp_fd", O_WRONLY | O_CREAT | O_TRUNC, 0600));
+	return (open(".tmp_fd", O_WRONLY | O_CREAT | O_TRUNC, 0600));
 }
 
 static int	expand(char *str)

@@ -14,7 +14,7 @@
 
 static int	init_pipe(int i, int *fd, int size)
 {
-	if (1 < size -1)
+	if (i < size - 1)
 	{
 		if (pipe(fd + i * 2) == -1)
 			return (2);

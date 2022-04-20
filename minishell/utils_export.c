@@ -42,6 +42,7 @@ static void	export_print(t_list **head)
 			printf("%s\"\n", envget(*head, ptr[i]->name));
 		else
 			printf("\"\n");
+		i++;
 	}
 	free(ptr);
 }
