@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
+
+#include <iostream>
+#include <iomanip>
+#include <iostream>
 
 class Contact
 {
@@ -24,27 +25,15 @@ private:
 	std::string nickName;
 	std::string phoneNumber;
 	std::string darkestSecret;
+	bool		init;
 public:
 	Contact(void);
-	Contact(std::string fn, std::string ln, std::string nn, std::string pn, std::string dk, int i);
 	~Contact();
-	int i;
-};
-
-class PhoneBook
-{
-private:
-	/* data */
-public:
-	Contact contacts[8];
-
-	PhoneBook(/* args */);
-	~PhoneBook();
-	void getPrompt();
-	void add();
-	void search();
-	void exit();
-	void displayContacts();
+	void fillContact();
+	void displaySearchMenu();
+	void displayField(std::string str);
+	void showSearchedContact(int i);
+	bool check() const;
 };
 
 #endif
