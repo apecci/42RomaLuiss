@@ -30,7 +30,7 @@ public:
 	Contact(void);
 	~Contact();
 	void fillContact();
-	void displaySearchMenu();
+	void displayContact();
 	void displayField(std::string str);
 	void showSearchedContact(int i);
 	bool check() const;

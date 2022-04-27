@@ -17,18 +17,20 @@ int main(){
 	std::string	in;
 	PhoneBook phoneBook;
 
-	std::cout << "Bienvenido nel PhoneBookko, que quiere hacer?" << std::endl;
-	std::cout << "ADD | SEARCH | EXIT" << std::endl;
+	std::cout << "\x1b[32mHI, I' M YOUR BRAND NEW PHONEBOOK, WHAT DO YOU WANT TO DO?\x1b[0m" << std::endl;
+	std::cout << "\x1b[33mADD | SEARCH | EXIT\x1b[0m" << std::endl;
 	std::getline(std::cin, in, '\n');
 	while (in != "EXIT"){
 		if (in == "ADD")
 			phoneBook.addContact();
-		if (in == "SEARCH")
+		else if (in == "SEARCH")
 			phoneBook.searchContact();
-		std::cout << "Ahora que quiere hacer?" << std::endl;
-		std::cout << "ADD | SEARCH | EXIT" << std::endl;
+		else
+			std::cout << "\x1b[31mINVALID INPUT, STAY FOCUS!\x1b[0m";
+		std::cout << "\x1b[32mLET'S GO AHEAD!\x1b[0m" << std::endl;
+		std::cout << "\x1b[33mADD | SEARCH | EXIT\x1b[0m" << std::endl;
 		std::getline(std::cin, in, '\n');
 	}
-	std::cout << "ADIOS BANDOLERO!" << std::endl;
+	std::cout << "\x1b[36mGOOD BYE BABY!\x1b[0m" << std::endl;
 	return (0);
 }
