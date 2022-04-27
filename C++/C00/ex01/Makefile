@@ -1,4 +1,4 @@
-NAME		=	elRubrica
+NAME		=	fonebuc
 
 CC			=	clang++
 
