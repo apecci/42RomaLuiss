@@ -5,28 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: apecci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 12:42:47 by apecci            #+#    #+#             */
-/*   Updated: 2022/04/28 12:42:49 by apecci           ###   ########.fr       */
+/*   Created: 2022/05/06 12:00:02 by apecci            #+#    #+#             */
+/*   Updated: 2022/05/06 12:00:03 by apecci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include "Zombie.hpp"
 
-Zombie::Zombie(std::string name){
+Zombie::Zombie()
+{
+	std::cout << "Zombie Resurrected!" << std::endl;
+	return ;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "Zombie Destroyed!" << std::endl;
+	return ;
+}
+
+std::string	Zombie::getName()	const{
+	return (this->name);
+}
+
+void		Zombie::setName(std::string name){
 	this->name = name;
-	return;
+	return ;
 }
 
-Zombie::~Zombie(){
-	std::cout << this->name + "Destroyed!" << std::endl;
-	return;
-}
-
-void Zombie::announce(void) const{
-	std::cout << this->name + ": BraiiiiiiinnnzzzZ..." << std::endl;
-	return;
-}
-
-std::string Zombie::getNome(void) const{
-	return this->name;
+void	Zombie::announce() const{
+	std::cout << this->name << ": WRYYYYYYYYYYYYYY" << std::endl;
+	return ;
 }
