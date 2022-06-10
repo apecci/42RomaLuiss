@@ -2,15 +2,13 @@
 
 int main()
 {
+	ClapTrap	clap("Roberto Saviano tutto matto");
 
-	std::cout << "{ T1 - TERMINATOR }" << std::endl;
-	ClapTrap	clap("T-800");
-
-	clap.attack("Kyle Reese");
+	clap.attack("Sailor Moon");
 	clap.takeDamage(7);
 	clap.beRepaired(39);
 
-	clap.attack("Sarah Connor");
+	clap.attack("Roberto Benigni");
 	clap.takeDamage(100);
 	clap.beRepaired(42);
 

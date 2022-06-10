@@ -48,3 +48,48 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 	std::cout << name << "'s total HPs are now " << hitPoints << std::endl;
 }
+
+void ClapTrap::operator = (const ClapTrap &op)
+{
+	if (this == &op)
+		return ;
+	name = op.getName();
+	hitPoints = op.getHP();
+	energyPoints = op.getEP();
+	attackDamage = op.getAD();
+}
+
+void			ClapTrap::setHP(unsigned int hp)
+{
+	this->hitPoints = hp;
+}
+
+void			ClapTrap::setEP(unsigned int ep)
+{
+	this->energyPoints = ep;
+}
+
+void			ClapTrap::setAD(unsigned int ad)
+{
+	this->attackDamage = ad;
+}
+
+int				ClapTrap::getHP() const
+{
+	return (this->hitPoints);
+}
+
+int				ClapTrap::getEP() const
+{
+	return (this->energyPoints);
+}
+
+int				ClapTrap::getAD() const
+{
+	return (this->attackDamage);
+}
+
+std::string		ClapTrap::getName() const
+{
+	return (this->name);
+}
