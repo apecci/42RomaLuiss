@@ -3,7 +3,7 @@
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->fixedValue = 0;
+	this->fixedValue = 2;
 	return ;
 }
 
@@ -26,7 +26,6 @@ Fixed& Fixed::operator = (const Fixed& fix)
 		this->fixedValue = fix.getRawBits();
 	return(*this);
 }
-
 
 int		Fixed::getRawBits() const
 {

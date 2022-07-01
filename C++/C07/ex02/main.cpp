@@ -108,8 +108,7 @@ int main()
 
 	std::cout << "Please select an option:" << std::endl;
 	std::cout << "<empty> <int> <string> <assign> <copy>" << std::endl;
-	std::getline(std::cin, input, '\n');// gets input value
-
+	std::getline(std::cin, input, '\n');
 	switch (checkInput(input))
 	{
 	case 1:

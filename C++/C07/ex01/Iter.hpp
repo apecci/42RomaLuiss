@@ -3,11 +3,11 @@
 
 # include <iostream>
 
-template <class Array, class Function>
-void    iter(Array* arr, size_t size, Function* foo)
+template <typename T>
+void    iter(T *arr, int len, void (*f)(T const & x))
 {
-    for (size_t i = 0; i < size; i++)
-        foo(arr[i]);
+    for (int i = 0; i < len; i++)
+        f(arr[i]);
 }
 
 template <class myType>

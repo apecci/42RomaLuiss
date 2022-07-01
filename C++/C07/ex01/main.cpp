@@ -1,37 +1,21 @@
 #include "Iter.hpp"
 
-static void	putNumber(int& i)
-{
-	std::cout << i << std::endl;
-}
 
-static void	putString(std::string& str)
+class Awesome
 {
-	std::cout << str << std::endl;
-}
-
-static void	increment(int& i)
-{
-	i++;
-}
+public:
+Awesome( void ) : _n( 42 ) { return; } int get( void ) const { return this->_n; } private: int _n;
+}; std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get();
+return o; } template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
 
 int	main()
 {
-	int	array[] = {0, 1, 2, 3, 4};
-
-	std::cout << "[initial] Int Array:" << std::endl;
-	::iter(array, 5, putNumber);
-	::iter(array, 5, increment);
-	std::cout << std::endl << "[incremented] Int Array:" << std::endl;
-	::iter(array, 5, putNumber);
-
-	std::string	str[] = {"two", "forty"};
-	
-	std::cout << std::endl << "[initial] String Array:" << std::endl;
-	::iter(str, 2, putString);
-	::swap(str[0], str[1]);
-	std::cout << std::endl << "[swapped] String Array:" << std::endl;
-	::iter(str, 2, putString);
+	std::cout << "------------------------checklist---------------------------" << std::endl;
+	int tab[] = { 0, 1, 2, 3, 4 };
+	Awesome tab2[5];
+	::iter( tab, 5, print );
+	::iter( tab2, 5, print );
 
 	return (0);
 }

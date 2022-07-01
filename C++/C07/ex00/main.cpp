@@ -1,5 +1,29 @@
 #include "Whatever.hpp"
 
+
+class Awesome
+{
+public:
+Awesome(void) : _n(0) {}
+Awesome( int n ) : _n( n ) {}
+Awesome & operator= (Awesome & a) { _n = a._n; return *this; } bool
+operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+bool operator!=( Awesome const & rhs ) const{ return (this->_n !=
+rhs._n); } bool operator>( Awesome const & rhs ) const { return (this->_n
+> rhs._n); } bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); } bool operator>=( Awesome const & rhs ) const { return
+(this->_n >= rhs._n); } bool operator<=( Awesome const & rhs ) const {
+return (this->_n <= rhs._n); } int get_n() const { return _n; } private: int
+_n; };
+std::ostream & operator<<(std::ostream & o, const Awesome &a) { o << a.get_n(); return o;}
+
+void testCheck()
+{
+	Awesome a(2), b(4); swap(a, b);
+	std::cout << a << " " << b << std::endl;
+	std::cout << max(a, b) << std::endl;
+	std::cout << min(a, b) << std::endl;
+}
+
 void testMain() 
 {
 	int a = 2;
@@ -59,6 +83,8 @@ int	checkInput(std::string input)
 		return (3);
 	else if (input == "max")
 		return (4);
+	else if (input == "check")
+		return (5);
 	else
 		return (0);
 }
@@ -68,8 +94,8 @@ int main()
 	std::string	input;
 
 	std::cout << "Please select an option:" << std::endl;
-	std::cout << "<main> <swap> <min> <max>" << std::endl;
-	std::getline(std::cin, input, '\n');// gets input value
+	std::cout << "<main> <swap> <min> <max> <check>" << std::endl;
+	std::getline(std::cin, input, '\n');
 
 	switch (checkInput(input))
 	{
@@ -84,6 +110,9 @@ int main()
 		return (0);
 	case 4:
 		testMax();
+		return (0);
+	case 5:
+		testCheck();
 		return (0);
 	default:
 		std::cout << "Error: Invalid input!" << std::endl;
